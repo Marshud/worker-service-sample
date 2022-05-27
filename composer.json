@@ -1,0 +1,13 @@
+{
+    "require": {
+        "steampixel/simple-php-router": "^0.7.0",
+        "thingengineer/mysqli-database-class": "dev-master",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+    "psr-4": {
+        "Shift\\":"inc/"
+        }
+    }   
+      
+}
