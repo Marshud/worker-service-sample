@@ -8,6 +8,11 @@ class Worker implements WorkerInterface{
   public string $email;
   public string $unique; 
 
+  /**
+   * @param string name
+   * @param string email
+   * Defines the structure of an object 
+   */
   function __construct(string $name, string $email)
   {
     $this->name = $name;
@@ -15,6 +20,10 @@ class Worker implements WorkerInterface{
     $this->unique = $this->makeUnique($email);
   }
 
+  /**
+   * Public method adds a worker to the datase
+   * @return bool
+   */
   public function addWorker() :bool
   {
     global $db;
@@ -41,19 +50,27 @@ class Worker implements WorkerInterface{
     }
   }
 
+  /**
+   * Helper method in a class that makes the email unquie
+   * @return string
+   */
   private function makeUnique($email) :string
   {
     return md5(trim($email));
   }
 
+  /**
+   * Public function for handling emails
+   */
   public function handleEmail($email) :array
   {
     global $db;
     $clean = $db->escape($email);
+    $unique = $this->makeUnique($email);
 
     return [
       'clean' => $clean,
-      'unique' => $this->unique,
+      'unique' => $unique,
     ];
   }
 }
