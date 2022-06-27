@@ -7,7 +7,7 @@ interface WorkerInterface {
    * Method adds a worker to the DB
    * 
    */
-  public function addWorker();
+  public function addWorker(string $name);
 
 }
 

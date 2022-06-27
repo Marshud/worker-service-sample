@@ -1,5 +1,5 @@
 <?php 
-namespace Shift;
+namespace Shift\Old;
 
 use DateTime;
 

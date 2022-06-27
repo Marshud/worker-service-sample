@@ -3,7 +3,7 @@ include $_SERVER['DOCUMENT_ROOT']."/inc/connection.php";
 
 // Router
 use Steampixel\Route;
-use Shift\Shift;
+use Shift\Old\Shift;
 
 
 $shift = new Shift;
